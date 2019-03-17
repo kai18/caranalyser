@@ -27,7 +27,10 @@ public class ApplicationLauncher {
         System.out.println(car);
       }
     } catch (IllegalArgumentException | ArrayIndexOutOfBoundsException e) {
-      System.out.println(e.getMessage() + " USAGE: mvn:exec FILEPATH NUMBER_OF_CARS_TO_RETURN ORIGIN_OF_CARS");
+      System.out.println(e.getMessage()
+          + " java -cp target\\cognitree-1.0-SNAPSHOT.jar "
+          + "com.kaustubh.cognitree.caranalytics.ApplicationLauncher "
+          + "FILEPATH NUMBER_OF_CARS_TO_RETURN ORIGIN_OF_CARS");
     } catch (DataSetReaderException | OriginNotFoundException e) {
       System.out.println("Analysis failed CAUSE: " + e.getMessage());
     } catch (Exception e) {
